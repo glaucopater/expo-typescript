@@ -16,7 +16,14 @@ export function Collapsible({
   return (
     <ThemedView>
       <Pressable
-        style={styles.heading}
+        style={({ pressed }) =>
+          pressed
+            ? { opacity: 0.5 }
+            : {
+                opacity: 1,
+                ...styles.heading,
+              }
+        }
         onPress={() => setIsOpen((value) => !value)}
       >
         <Ionicons
