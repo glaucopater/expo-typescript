@@ -7,7 +7,7 @@ import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 
-import { EventsList } from "../../pages/EventsList";
+import { Onboarding } from "@/pages/Onboarding";
 
 export default function TabThreeScreen() {
   return (
@@ -17,7 +17,7 @@ export default function TabThreeScreen() {
         <Ionicons size={310} name="code-slash" style={styles.headerImage} />
       }
     >
-      <EventsList />
+      <Onboarding navigation={undefined} />
     </ParallaxScrollView>
   );
 }

@@ -1,66 +1,66 @@
 export enum MoodFeedback {
-  HAPPY = 'Happy',
-  NATURAL = 'Natural',
-  TERRIBLE = 'Terrible',
-  SAD = 'Sad',
-  AGGRESSIVE = 'Aggressive',
-  CONFIDENT = 'Confident',
-  NERVOUS = 'Nervous',
-  TIRED = 'Tired',
+  HAPPY = "Happy",
+  NATURAL = "Natural",
+  TERRIBLE = "Terrible",
+  SAD = "Sad",
+  AGGRESSIVE = "Aggressive",
+  CONFIDENT = "Confident",
+  NERVOUS = "Nervous",
+  TIRED = "Tired",
 }
 
 export enum HangoverFeedback {
   FRESH = "I'm fresh",
-  MILD = 'Tired',
-  BAD = 'Hangover',
+  MILD = "Tired",
+  BAD = "Hangover",
 }
 
 export enum EventCompanion {
-  FRIENDS = 'Friends',
-  COLLEAGUES = 'Colleagues',
-  BFF = 'BFF',
-  PARTNER = 'Partner',
-  FAMILIY = 'Family',
-  DATE = 'Date',
-  BUSINESS = 'Business',
-  STRANGERS = 'Strangers',
+  FRIENDS = "Friends",
+  COLLEAGUES = "Colleagues",
+  BFF = "BFF",
+  PARTNER = "Partner",
+  FAMILIY = "Family",
+  DATE = "Date",
+  BUSINESS = "Business",
+  STRANGERS = "Strangers",
 }
 
 export enum EventPurpose {
-  RELAX = 'Relax',
-  GETWASTED = 'Get Wasted',
-  CONNECT = 'Connect',
+  RELAX = "Relax",
+  GETWASTED = "Get Wasted",
+  CONNECT = "Connect",
 }
 
 export enum BoozyBFEventStatus {
-  RUNNING = 'RUNNING',
-  PLANNED = 'PLANNED',
-  COMPLETED = 'COMPLETED',
-  ALMOST_COMPLETED = 'ALMOST_COMPLETED',
+  RUNNING = "RUNNING",
+  PLANNED = "PLANNED",
+  COMPLETED = "COMPLETED",
+  ALMOST_COMPLETED = "ALMOST_COMPLETED",
 }
 
 export enum EventComfortableLevel {
-  TERRIBLE = 'Terrible',
-  SAD = 'Sad',
-  NATURAL = 'Natural',
-  HAPPY = 'Happy',
+  TERRIBLE = "Terrible",
+  SAD = "Sad",
+  NATURAL = "Natural",
+  HAPPY = "Happy",
 }
 
 export type RunningBoozyBFEvent = Pick<
   BoozyBFEvent,
-  | 'id'
-  | 'name'
-  | 'date'
-  | 'lastUpdate'
-  | 'status'
-  | 'purpose'
-  | 'companion'
-  | 'comfortableLevel'
-  | 'reminderFrequency'
-  | 'reminderLeavingTime'
-  | 'startReminderTime'
-  | 'numberOfGlasses'
-  | 'estimatedLeavingTime'
+  | "id"
+  | "name"
+  | "date"
+  | "lastUpdate"
+  | "status"
+  | "purpose"
+  | "companion"
+  | "comfortableLevel"
+  | "reminderFrequency"
+  | "reminderLeavingTime"
+  | "startReminderTime"
+  | "numberOfGlasses"
+  | "estimatedLeavingTime"
 >;
 
 export type BoozyBFEvent = {
@@ -87,28 +87,28 @@ export type BoozyBFEvent = {
 };
 
 export enum ReminderFrequency {
-  EVERY_30_MINUTES = 'Every 30 Minutes',
-  EVERY_60_MINUTES = 'Every Hour',
-  EVERY_120_MINUTES = 'Every 2 Hours',
+  EVERY_30_MINUTES = "Every 30 Minutes",
+  EVERY_60_MINUTES = "Every Hour",
+  EVERY_120_MINUTES = "Every 2 Hours",
 }
 
 export enum Tags {
-  GOOD = 'Good',
-  MEDIUM = 'Medium',
-  BAD = 'Bad',
-  GREY = 'Grey',
+  GOOD = "Good",
+  MEDIUM = "Medium",
+  BAD = "Bad",
+  GREY = "Grey",
 }
 
 export enum NavigationMenuItemType {
-  TIMER = 'TIMER',
-  GLASS = 'GLASS',
+  TIMER = "TIMER",
+  GLASS = "GLASS",
 }
 
 export enum UserGoals {
-  DRINK_LESS = 'Drink Less',
-  GO_ALCOHOL_FREE = 'Go Alcohol Free',
-  BUILD_BETTER_HABIT = 'Build Better Drinking Habit',
-  JUST_TRACK = 'Just To Track My Drinking Habit',
+  DRINK_LESS = "Drink Less",
+  GO_ALCOHOL_FREE = "Go Alcohol Free",
+  BUILD_BETTER_HABIT = "Build Better Drinking Habit",
+  JUST_TRACK = "Just To Track My Drinking Habit",
 }
 
 export type UserDetails = {
@@ -125,14 +125,14 @@ export type AppDetails = {
 };
 
 export enum DrinkType {
-  WINE = 'Wine',
-  BEER = 'Beer',
-  BOTTLE = 'Bottle',
-  COCKTAIL = 'Cocktail',
-  CAN = 'Can',
-  SHORT_DRINK = 'Short Drink',
-  LONG_DRINK = 'Long Drink',
-  SHOT = 'Shot',
+  WINE = "Wine",
+  BEER = "Beer",
+  BOTTLE = "Bottle",
+  COCKTAIL = "Cocktail",
+  CAN = "Can",
+  SHORT_DRINK = "Short Drink",
+  LONG_DRINK = "Long Drink",
+  SHOT = "Shot",
 }
 
 export type Drink = {

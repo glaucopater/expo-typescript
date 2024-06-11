@@ -1,9 +1,9 @@
-import { useRoute } from '@react-navigation/native';
-import { Text, View } from 'react-native';
+import { useRoute } from "@react-navigation/native";
+import { Text, View } from "react-native";
 
-import { saveIsOnboarded } from '../../api';
-import { ThemeColors } from '../../theme';
-import { GenericButton } from '../GenericButton';
+import { saveIsOnboarded } from "../../api";
+import { ThemeColors } from "../../theme";
+import { GenericButton } from "../GenericButton";
 
 export const OnboardingFooter = ({
   navigation,
@@ -16,107 +16,107 @@ export const OnboardingFooter = ({
 
   const handleOnDone = () => {
     saveIsOnboarded();
-    navigation.navigate('Home');
+    navigation.navigate("Home");
   };
 
   return (
     <View
       style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        width: '100%',
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        width: "100%",
       }}
     >
-      {['Step2'].includes(currentRouteName) && (
+      {["Step2"].includes(currentRouteName) && (
         <>
           <GenericButton
             viewStyle={{
-              width: '100%',
+              width: "100%",
               marginTop: 16,
               backgroundColor: ThemeColors.primary.darkPurple,
               height: 64,
-              alignSelf: 'center',
+              alignSelf: "center",
             }}
             textStyle={{
-              fontFamily: 'Lato',
-              fontWeight: '700',
+              fontFamily: "Lato",
+              fontWeight: "700",
               fontSize: 14,
             }}
-            label={'Next'}
-            onClickEvent={() => navigation.navigate('Step3')}
+            label={"Next"}
+            onClickEvent={() => navigation?.navigate("Step3")}
           />
           <GenericButton
             viewStyle={{
-              width: '100%',
+              width: "100%",
               marginTop: 16,
-              backgroundColor: 'transparent',
-              borderColor: 'transparent',
+              backgroundColor: "transparent",
+              borderColor: "transparent",
               height: 64,
-              alignSelf: 'center',
+              alignSelf: "center",
             }}
             textStyle={{
-              fontFamily: 'Lato',
-              fontWeight: '700',
+              fontFamily: "Lato",
+              fontWeight: "700",
               color: ThemeColors.primary.octopus,
               fontSize: 14,
             }}
-            label={'Back'}
-            onClickEvent={() => navigation.navigate('Onboarding')}
+            label={"Back"}
+            onClickEvent={() => navigation?.navigate("Onboarding")}
           />
         </>
       )}
 
-      {['Step3'].includes(currentRouteName) && (
+      {["Step3"].includes(currentRouteName) && (
         <GenericButton
           viewStyle={{
-            width: '100%',
+            width: "100%",
             marginTop: 16,
             backgroundColor: ThemeColors.primary.darkPurple,
             height: 64,
-            alignSelf: 'center',
+            alignSelf: "center",
           }}
           textStyle={{
-            fontFamily: 'Lato',
-            fontWeight: '700',
+            fontFamily: "Lato",
+            fontWeight: "700",
             fontSize: 14,
             color: ThemeColors.primary.white,
           }}
-          label={'Done'}
+          label={"Done"}
           onClickEvent={handleOnDone}
           testID="onboarding-done"
         />
       )}
-      {['Onboarding', 'Step3'].includes(currentRouteName) && (
+      {["Onboarding", "Step3"].includes(currentRouteName) && (
         <>
           <GenericButton
             viewStyle={{
-              width: '100%',
+              width: "100%",
               marginTop: 16,
               backgroundColor:
-                currentRouteName === 'Onboarding'
+                currentRouteName === "Onboarding"
                   ? ThemeColors.primary.darkPurple
-                  : 'transparent',
+                  : "transparent",
               height: 64,
-              alignSelf: 'center',
+              alignSelf: "center",
               borderColor:
-                currentRouteName === 'Onboarding'
+                currentRouteName === "Onboarding"
                   ? ThemeColors.primary.darkPurple
-                  : 'transparent',
+                  : "transparent",
             }}
             textStyle={{
-              fontFamily: 'Lato',
-              fontWeight: '700',
+              fontFamily: "Lato",
+              fontWeight: "700",
               fontSize: 14,
               color:
-                currentRouteName === 'Onboarding'
+                currentRouteName === "Onboarding"
                   ? ThemeColors.primary.white
                   : ThemeColors.primary.octopus,
             }}
-            label={currentRouteName === 'Onboarding' ? 'Next' : 'Back'}
-            onClickEvent={() => navigation.navigate('Step2')}
+            label={currentRouteName === "Onboarding" ? "Next" : "Back"}
+            onClickEvent={() => navigation?.navigate("Step2")}
           />
-          {currentRouteName === 'Onboarding' && (
+          {currentRouteName === "Onboarding" && (
             <View
               style={{
                 height: 64,

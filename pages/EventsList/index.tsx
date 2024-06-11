@@ -1,26 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import { ImageBackground, Pressable, Text, View } from 'react-native';
+import React, { useEffect, useState } from "react";
+import { ImageBackground, Pressable, Text, View } from "react-native";
 
-import { getRunningEvent, getSortedPreviousEvents } from '../../api';
-import { BoozyBFEvent, BoozyBFEventStatus } from '../../api/models';
-import { ActiveEventCard } from '../../components/ActiveEventCard';
-import { EventCard } from '../../components/EventCard';
-import { GenericButton } from '../../components/GenericButton';
-import NavigationBar from '../../components/NavigationBar';
-import { TimeFilterModal } from '../../components/TimeFilterModal';
-import { DEFAULT_LOCALE } from '../../config';
-import { ScrollViewWrapperTemplate } from '../../templates/ScrollViewWrapperTemplate';
-import { ThemeColors } from '../../theme';
-import { getMonthBounds, getShortMonthNames } from '../../utils';
-import { styles } from './EventsList.styles';
+import { getRunningEvent, getSortedPreviousEvents } from "../../api";
+import { BoozyBFEvent, BoozyBFEventStatus } from "../../api/models";
+import { ActiveEventCard } from "../../components/ActiveEventCard";
+import { EventCard } from "../../components/EventCard";
+import { GenericButton } from "../../components/GenericButton";
+import NavigationBar from "../../components/NavigationBar";
+import { TimeFilterModal } from "../../components/TimeFilterModal";
+import { DEFAULT_LOCALE } from "../../config";
+import { ScrollViewWrapperTemplate } from "../../templates/ScrollViewWrapperTemplate";
+import { ThemeColors } from "../../theme";
+import { getMonthBounds, getShortMonthNames } from "../../utils";
+import { styles } from "./EventsList.styles";
 
-export const EventsList = ({ navigation }) => {
-  const [currentEvents, setCurrentEvents] = useState<BoozyBFEvent[]>();
+export const EventsList = ({ navigation }: any) => {
+  const [currentEvents, setCurrentEvents] = useState<BoozyBFEvent[]>([]);
   const [isReminderEnabled, setIsReminderEnabled] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
 
   const [currentMonth, setCurrentMonth] = useState<string>(
-    new Date().toLocaleString(DEFAULT_LOCALE, { month: 'short' })
+    new Date().toLocaleString(DEFAULT_LOCALE, { month: "short" })
   );
   const [currentYear, setCurrentYear] = useState<number>(
     new Date().getFullYear()
@@ -46,7 +46,7 @@ export const EventsList = ({ navigation }) => {
     const currentMonthInNumbers = getShortMonthNames().map((month, index) => {
       if (month === currentMonth) return index;
     });
-    const currentMonthInNumber = currentMonthInNumbers.filter(Boolean)[0];
+    const currentMonthInNumber = currentMonthInNumbers.filter(Boolean)[0] || 0;
 
     const { firstDay, lastDay } = getMonthBounds(
       currentYear,
@@ -71,7 +71,7 @@ export const EventsList = ({ navigation }) => {
     handleOnLoadData();
   }, [currentYear, currentMonth]);
 
-  const eventListCurrentTimeFilter = currentYear + ' ' + currentMonth;
+  const eventListCurrentTimeFilter = currentYear + " " + currentMonth;
 
   // giving for granted that the list is sorted correctly
   let almostCompletedEvent;
@@ -112,24 +112,24 @@ export const EventsList = ({ navigation }) => {
         <View style={styles.header}>
           <View
             style={{
-              display: 'flex',
-              flexDirection: 'column',
+              display: "flex",
+              flexDirection: "column",
             }}
           >
             <Pressable
               onPress={handleOnOpenCalendar}
               style={{
-                display: 'flex',
-                flexDirection: 'row',
+                display: "flex",
+                flexDirection: "row",
               }}
             >
               <Text
                 style={{
-                  fontFamily: 'Suez-One',
+                  fontFamily: "Suez-One",
                   fontSize: 20,
-                  fontWeight: '400',
+                  fontWeight: "400",
                   lineHeight: 24,
-                  textAlign: 'center',
+                  textAlign: "center",
                   color: ThemeColors.primary.darkPurple,
                 }}
               >
@@ -141,22 +141,22 @@ export const EventsList = ({ navigation }) => {
                   height: 20,
                   marginTop: 4,
                 }}
-                source={require('../../assets/images/chevronSmallDown.png')}
+                source={require("../../assets/images/chevronSmallDown.png")}
               />
             </Pressable>
             <View
               style={{
-                alignItems: 'flex-start',
+                alignItems: "flex-start",
               }}
             >
               {currentEvents?.length > 0 && (
                 <Text
                   style={{
-                    fontFamily: 'Lato',
+                    fontFamily: "Lato",
                     fontSize: 12,
-                    fontWeight: '700',
+                    fontWeight: "700",
                     lineHeight: 16,
-                    textAlign: 'center',
+                    textAlign: "center",
                     color: ThemeColors.primary.fadedDarlPurple,
                   }}
                 >
