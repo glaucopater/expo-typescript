@@ -1,5 +1,4 @@
 import "react-native-get-random-values";
-import { flex } from "styled-system";
 
 import {
   BoozyBFEvent,

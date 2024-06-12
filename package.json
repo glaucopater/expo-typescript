@@ -1,5 +1,5 @@
 {
-  "name": "expo-typescript",
+  "name": "template-expo-typescript",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
@@ -23,12 +23,12 @@
     "@react-native-async-storage/async-storage": "1.23.1",
     "@react-navigation/native": "^6.0.2",
     "@testing-library/react-native": "^12.5.1",
-    "expo": "^51.0.12",
+    "expo": "51.0.10",
     "expo-constants": "~16.0.2",
-    "expo-dev-client": "~4.0.16",
+    "expo-dev-client": "~4.0.17",
     "expo-font": "~12.0.7",
     "expo-linking": "~6.3.1",
-    "expo-router": "~3.5.16",
+    "expo-router": "3.5.15",
     "expo-splash-screen": "~0.27.5",
     "expo-status-bar": "~1.12.1",
     "expo-system-ui": "~3.0.6",
@@ -54,5 +54,9 @@
     "react-test-renderer": "18.2.0",
     "typescript": "~5.3.3"
   },
-  "private": true
+  "private": true,
+  "volta": {
+    "node": "20.14.0",
+    "yarn": "1.22.22"
+  }
 }
